@@ -1,6 +1,6 @@
 # Mini-project 1 - React Task & Productivity Manager
 
-## Task and Productivity Manager
+## COS Hub (Chief of Staff Hub)
 
 A responsive task manager that displays 20 sample tasks, lets you search and filter them, and lets you change their completion status during your visit. It uses JSONPlaceholder for sample data, so status changes reset when the page is refreshed.
 

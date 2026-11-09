@@ -47,9 +47,6 @@ function App() {
         </Routes>
       </main>
 
-      <footer className="mx-auto max-w-5xl px-4 pb-8 text-sm text-slate-500">
-        Sample tasks from JSONPlaceholder. Changes reset when you refresh.
-      </footer>
     </div>
   )
 }

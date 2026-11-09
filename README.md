@@ -1,43 +1,34 @@
-# Task and Productivity Manager
+# Mini-project 1 - React Task & Productivity Manager
 
-This is a simple, responsive task manager built for Mini Project 1. It shows 20 sample tasks from JSONPlaceholder, lets you search and filter them, and lets you mark tasks as completed during your current visit.
+## Task and Productivity Manager
 
-## Features and routes
+A responsive task manager that displays 20 sample tasks, lets you search and filter them, and lets you change their completion status during your visit. It uses JSONPlaceholder for sample data, so status changes reset when the page is refreshed.
 
-| Route | What it shows |
-| --- | --- |
-| `/` | Dashboard with task counts and the next tasks to do. |
-| `/tasks` | Searchable task list with All, To do, and Completed filters. |
-| `/tasks/:id` | A single task's title, status, assigned user, and completion button. |
+## Features
 
-The completion button updates React state shared across the routes. JSONPlaceholder is a read-only sample data source for this app, so changes are **temporary** and reset when the page is refreshed. There is no account or permanent task storage.
+- `/` — Dashboard with total, completed, and to-do counts plus the next tasks to do.
+- `/tasks` — Searchable task list with All, To do, and Completed filters.
+- `/tasks/:id` — Task details with title, status, assigned user, and a button to change the status.
+- Public API: [JSONPlaceholder](https://jsonplaceholder.typicode.com/) supplies tasks through `GET /todos?_limit=20` and individual tasks through `GET /todos/:id`.
+- TanStack Query handles fetching and caching. The app displays loading, error, and empty states, offers a retry button for failed requests, and shows a not-found message for missing tasks.
 
-## Public API and data states
+### Screenshots
 
-The app uses [JSONPlaceholder](https://jsonplaceholder.typicode.com/):
-
-- `GET /todos?_limit=20` loads the dashboard and task list.
-- `GET /todos/:id` loads a task detail page.
-
-TanStack Query manages these requests and caches them under `['todos', { limit: 20 }]` and `['todo', id]`. The app shows a loading message while fetching, an error message with a **Try again** button when a request fails, and an empty message if the list is empty or a search has no matches. A missing task ID shows **Task not found**. Queries use a 60-second stale time and do not automatically retry errors.
-
-## Screenshots
-
-### Dashboard (`/`)
+#### Dashboard (`/`)
 
 ![Dashboard showing task counts and next tasks](docs/screenshots/dashboard.png)
 
-### Tasks (`/tasks`, mobile width)
+#### Tasks (`/tasks`)
 
 ![Mobile task list with search, filter, and task cards](docs/screenshots/tasks-mobile.png)
 
-### Task detail (`/tasks/1`)
+#### Task detail (`/tasks/1`)
 
 ![Task detail showing task status and completion button](docs/screenshots/task-detail.png)
 
-## Run locally
+## Setup
 
-Requirements: Node.js and npm.
+Requires Node.js and npm. Clone the repository and start the development server:
 
 ```bash
 git clone https://github.com/ruphina-cylix/mini_project_emeritus.git
@@ -46,15 +37,8 @@ npm install
 npm run dev
 ```
 
-Open the local address printed by Vite. The GitHub repository is private, so access is required to clone it.
-
-Useful checks:
-
-```bash
-npm run lint
-npm run build
-```
+Open the local URL printed by Vite. Access to the private GitHub repository is required to clone it.
 
 ## Tech stack
 
-React, React Router, TanStack Query, Tailwind CSS, Vite, and ESLint.
+React, React Router, TanStack Query, Tailwind CSS, and Vite.
